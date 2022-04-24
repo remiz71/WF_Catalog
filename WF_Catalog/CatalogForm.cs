@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WF_Catalog
 {
@@ -36,5 +37,43 @@ namespace WF_Catalog
                 if (form.ShowDialog() == DialogResult.OK) listBox1.Items.Add(_g);
         }
 
+        private void bt_edit_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedIndex == -1)
+                MessageBox.Show("Вы не выбрали элемент для редактирования", "Ошибка");
+            else
+            {
+                int index = listBox1.SelectedIndex;
+                Goods _editGood = (Goods)listBox1.SelectedItem;
+                AddForm editForm = new AddForm(_editGood, false);
+                if (editForm.ShowDialog() == DialogResult.OK)
+                {
+                    listBox1.Items.RemoveAt(index);
+                    listBox1.Items.Insert(index, _editGood);
+                }
+            }
+        }
+
+        private void bt_save_Click(object sender, EventArgs e)
+        {
+            StreamWriter sw = new StreamWriter("GoodsList.dat");
+            if (listBox1.Items.Count != 0)
+            {
+                foreach (var item in listBox1.Items)
+                {
+                    sw.WriteLine(item.ToString());
+                }
+                MessageBox.Show("Запись в файл прошла успешно");
+                sw.Close();
+            }
+            else MessageBox.Show("В списке нет товаров");
+            sw.Close();
+        
+    }
+
+        private void bt_close_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

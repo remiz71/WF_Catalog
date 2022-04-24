@@ -49,7 +49,7 @@ namespace WF_Catalog
         }
         public override string ToString()
         {
-            return _name + "Изготовитель: " + _manufacturer + "Цена: " + _price;
+            return "Наименование: " + _name + " Изготовитель: " + _manufacturer + " Цена: " + _price;
         }
 
     }

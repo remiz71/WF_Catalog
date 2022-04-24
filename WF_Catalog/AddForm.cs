@@ -36,23 +36,26 @@ namespace WF_Catalog
 
         private void bt_OK_Click(object sender, EventArgs e)
         {
-            if (tb_name.Text ==""||tb_country.Text ==""||tb_cost.Text =="")
+            if (tb_name.Text == "" || tb_country.Text == "" || tb_cost.Text == "")
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Не все обязательные поля заполнены");
             }
-            if (_goods == null)
-                _goods = new Goods();
-            _goods._name = tb_name.Text;
-            _goods._manufacturer = tb_country.Text;
-            try
+            else
             {
-                _goods._price = Convert.ToDouble(tb_cost.Text);
+                if (_goods == null)
+                    _goods = new Goods();
+                _goods._name = tb_name.Text;
+                _goods._manufacturer = tb_country.Text;
+                try
+                {
+                    _goods._price = Convert.ToDouble(tb_cost.Text);
+                    DialogResult = DialogResult.OK;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Вы неправильно ввели сумму, сумма содержит только цифры", "Ошибка задания суммы", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Error");
-            }
-            DialogResult = DialogResult.OK;
             
         }
     }

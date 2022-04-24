@@ -16,7 +16,7 @@ namespace WF_Catalog
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Catalog());
+            Application.Run(new Menu());
         }
     }
 }

@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tb_name = new System.Windows.Forms.TextBox();
-            this.tb_country = new System.Windows.Forms.TextBox();
-            this.tb_cost = new System.Windows.Forms.TextBox();
-            this.bt_OK = new System.Windows.Forms.Button();
             this.bt_cancel = new System.Windows.Forms.Button();
+            this.bt_OK = new System.Windows.Forms.Button();
+            this.tb_cost = new System.Windows.Forms.TextBox();
+            this.tb_country = new System.Windows.Forms.TextBox();
+            this.tb_name = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,53 +56,15 @@
             this.panel1.Size = new System.Drawing.Size(476, 355);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // bt_cancel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Наименование";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 118);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Страна производитель";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 217);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Стоимость";
-            // 
-            // tb_name
-            // 
-            this.tb_name.Location = new System.Drawing.Point(14, 76);
-            this.tb_name.Name = "tb_name";
-            this.tb_name.Size = new System.Drawing.Size(449, 22);
-            this.tb_name.TabIndex = 3;
-            // 
-            // tb_country
-            // 
-            this.tb_country.Location = new System.Drawing.Point(14, 166);
-            this.tb_country.Name = "tb_country";
-            this.tb_country.Size = new System.Drawing.Size(449, 22);
-            this.tb_country.TabIndex = 4;
-            // 
-            // tb_cost
-            // 
-            this.tb_cost.Location = new System.Drawing.Point(14, 252);
-            this.tb_cost.Name = "tb_cost";
-            this.tb_cost.Size = new System.Drawing.Size(449, 22);
-            this.tb_cost.TabIndex = 5;
+            this.bt_cancel.Location = new System.Drawing.Point(258, 311);
+            this.bt_cancel.Name = "bt_cancel";
+            this.bt_cancel.Size = new System.Drawing.Size(203, 32);
+            this.bt_cancel.TabIndex = 7;
+            this.bt_cancel.Text = "Отмена";
+            this.bt_cancel.UseVisualStyleBackColor = true;
+            this.bt_cancel.Click += new System.EventHandler(this.bt_cancel_Click);
             // 
             // bt_OK
             // 
@@ -114,15 +76,53 @@
             this.bt_OK.UseVisualStyleBackColor = true;
             this.bt_OK.Click += new System.EventHandler(this.bt_OK_Click);
             // 
-            // bt_cancel
+            // tb_cost
             // 
-            this.bt_cancel.Location = new System.Drawing.Point(258, 311);
-            this.bt_cancel.Name = "bt_cancel";
-            this.bt_cancel.Size = new System.Drawing.Size(203, 32);
-            this.bt_cancel.TabIndex = 7;
-            this.bt_cancel.Text = "Отмена";
-            this.bt_cancel.UseVisualStyleBackColor = true;
-            this.bt_cancel.Click += new System.EventHandler(this.bt_cancel_Click);
+            this.tb_cost.Location = new System.Drawing.Point(14, 252);
+            this.tb_cost.Name = "tb_cost";
+            this.tb_cost.Size = new System.Drawing.Size(449, 22);
+            this.tb_cost.TabIndex = 5;
+            // 
+            // tb_country
+            // 
+            this.tb_country.Location = new System.Drawing.Point(14, 166);
+            this.tb_country.Name = "tb_country";
+            this.tb_country.Size = new System.Drawing.Size(449, 22);
+            this.tb_country.TabIndex = 4;
+            // 
+            // tb_name
+            // 
+            this.tb_name.Location = new System.Drawing.Point(14, 76);
+            this.tb_name.Name = "tb_name";
+            this.tb_name.Size = new System.Drawing.Size(449, 22);
+            this.tb_name.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 217);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 16);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Стоимость*";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 118);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(165, 16);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Страна производитель*";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Наименование*";
             // 
             // AddForm
             // 

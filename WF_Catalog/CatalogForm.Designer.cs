@@ -34,11 +34,15 @@
             this.bt_edit = new System.Windows.Forms.Button();
             this.bt_add = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.bt_save = new System.Windows.Forms.Button();
+            this.bt_close = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.bt_close);
+            this.panel1.Controls.Add(this.bt_save);
             this.panel1.Controls.Add(this.bt_clear);
             this.panel1.Controls.Add(this.bt_del);
             this.panel1.Controls.Add(this.bt_edit);
@@ -47,7 +51,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(518, 527);
+            this.panel1.Size = new System.Drawing.Size(518, 619);
             this.panel1.TabIndex = 0;
             // 
             // bt_clear
@@ -78,6 +82,7 @@
             this.bt_edit.TabIndex = 2;
             this.bt_edit.Text = "Редактировать товар";
             this.bt_edit.UseVisualStyleBackColor = true;
+            this.bt_edit.Click += new System.EventHandler(this.bt_edit_Click);
             // 
             // bt_add
             // 
@@ -98,11 +103,31 @@
             this.listBox1.Size = new System.Drawing.Size(493, 340);
             this.listBox1.TabIndex = 0;
             // 
+            // bt_save
+            // 
+            this.bt_save.Location = new System.Drawing.Point(12, 523);
+            this.bt_save.Name = "bt_save";
+            this.bt_save.Size = new System.Drawing.Size(249, 59);
+            this.bt_save.TabIndex = 5;
+            this.bt_save.Text = "Сохранить в файл";
+            this.bt_save.UseVisualStyleBackColor = true;
+            this.bt_save.Click += new System.EventHandler(this.bt_save_Click);
+            // 
+            // bt_close
+            // 
+            this.bt_close.Location = new System.Drawing.Point(267, 523);
+            this.bt_close.Name = "bt_close";
+            this.bt_close.Size = new System.Drawing.Size(238, 59);
+            this.bt_close.TabIndex = 6;
+            this.bt_close.Text = "Выход в меню";
+            this.bt_close.UseVisualStyleBackColor = true;
+            this.bt_close.Click += new System.EventHandler(this.bt_close_Click);
+            // 
             // Catalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 527);
+            this.ClientSize = new System.Drawing.Size(518, 619);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Catalog";
@@ -122,6 +147,8 @@
         private System.Windows.Forms.Button bt_add;
         private System.Windows.Forms.Button bt_clear;
         private System.Windows.Forms.Button bt_del;
+        private System.Windows.Forms.Button bt_close;
+        private System.Windows.Forms.Button bt_save;
     }
 }
 
